@@ -111,7 +111,7 @@ module Darts
 
     def filter_lines
       @lines = @lines.select do |line| 
-        (line =~ /^From / ||
+        (line =~ /^From / || line =~ /^From: / ||
          line =~ /^Subject:/ ||
          line =~ /^Date:/ ||
          line =~ /^Sets/ ||

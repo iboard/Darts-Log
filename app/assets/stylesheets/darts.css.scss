@@ -4,6 +4,14 @@ BODY {
   min-width: 1200px;
 }
 
+form {
+  border: 1px solid #ddd;
+  border-radius: 10px 10px 10px 10px;
+  width: 400px;
+  padding: 40px;
+  margin-top: -40px;
+}
+
 h1 {
   font-family: Impact, Arial bold, Arial;
   text-shadow: 2px 2px 3px darken(#4CA6DC, 15%);
@@ -71,9 +79,10 @@ label {
   font-size: 0.9em;
   border-radius: 10px;
   box-shadow: 3px 3px 5px #ddd;
-  background: #ffe;
+  background: #ffa;
   opacity: 0.7;
 }
+
 #upload-form {
   background: none;
   border-radius: 10px 10px 10px 10px;

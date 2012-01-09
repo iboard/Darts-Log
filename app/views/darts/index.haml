@@ -6,12 +6,14 @@
 #upload-form
   .note 
     %p
-    Please upload a Maildir-file containing a mail as formated by
-    = link_to "Russ Bray Darts Scorer", "http://itunes.apple.com/de/app/russ-bray-s-scorer/id377453562?mt=8"
-    %br
-    %p= link_to "Mail-format?", "mailformat.html"
+      %strong Upload:
+      Please upload a Maildir-file containing one or more mails as formated by
+      = link_to "Russ Bray Darts Scorer", "http://itunes.apple.com/de/app/russ-bray-s-scorer/id377453562?mt=8"
+      Application.
+    %ul
+      %li= link_to "HOWTO Darts Log?", "mailformat.html"
   = form_tag darts_path, :multipart => true do
-    = label_tag "Upload Maildir-file"
+    = label_tag "Upload Darts ..."
     = file_field_tag :darts_file
     = submit_tag "Upload File"
 
