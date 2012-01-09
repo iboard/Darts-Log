@@ -1,0 +1,70 @@
+%h1= "Darts Log "
+- first_line = true
+- if @error && !@error.blank?
+  #errors= @error
+    
+#upload-form
+  .note 
+    %p
+    Please upload a Maildir-file containing a mail as formated by
+    = link_to "Russ Bray Darts Scorer", "http://itunes.apple.com/de/app/russ-bray-s-scorer/id377453562?mt=8"
+    %br
+    %p= link_to "Mail-format?", "mailformat.html"
+  = form_tag darts_path, :multipart => true do
+    = label_tag "Upload Maildir-file"
+    = file_field_tag :darts_file
+    = submit_tag "Upload File"
+
+  - if @reader
+    .file-description
+      %h2 Last uploaded File
+      Filename:
+      = File::basename @reader.filename
+      %br
+      %br 
+        Size: 
+        = File.size(@reader.filename)
+      %br
+        Encoding:
+        = File.new(@reader.filename).external_encoding
+      %br
+        Modified:
+        = File.new(@reader.filename).mtime.to_s
+      %br
+        Lines:
+        = File.new(@reader.filename).lines.count
+      %br
+        Games read:
+        = @games.count
+  
+- unless !@error.blank?
+  - begin  
+    #results
+      #links
+        = link_to "Download CSV", darts_index_path(format: :csv)
+      %h2= @games.first[:subject]
+      %h3
+        = @games.first[:from]
+        %small= "User-ID: " + @games.first[:from_id]
+      %p
+        = @games.length
+        Games between
+        = distance_of_time_in_words(Time.now,Time.parse(@games.first[:date]))
+        and
+        = distance_of_time_in_words(Time.now,Time.parse(@games.last[:date]))
+        ago.
+      %table{style: 'width: 100%; border: 1px solid #ddd; margin:0px; padding:0px',    cellpadding: 0, cellspacing: 0}    
+        %tr{style: 'background: #ddd;    padding: 0px; margin:0px'}    
+          %th Date    
+          %th Game    
+          %th Player      
+          - Darts::header(@games.first).each do |th|    
+            %th= th    
+        - @games.each do |game|
+          = render 'game', :game => game
+  - rescue => e
+    #errors
+      Something wrong with your data. Please upload a Maildir file
+      of one or more mails from 
+      %span{style: 'font-style: italic;'}
+        Russ Bray Darts Scorer

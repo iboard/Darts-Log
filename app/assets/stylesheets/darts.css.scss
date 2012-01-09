@@ -1,0 +1,120 @@
+BODY {
+  font-family: Arial, Helvetica, sans-serif;
+  background: url(/assets/darts.png) 99% 50px no-repeat;
+  min-width: 1200px;
+}
+
+h1 {
+  font-family: Impact, Arial bold, Arial;
+  text-shadow: 2px 2px 3px darken(#4CA6DC, 15%);
+  margin-top: 40px;
+  margin-left: 30px;
+  font-size: 3em;
+  text-align: left;
+  color: darken(#4CA6DC, 25%);
+  letter-spacing: 0.1em;
+}
+
+#content {
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-right: 200px;
+}
+
+form {
+ font-family: Arial, Helvetica, sans-serif; 
+}
+
+label { 
+  clear: left;
+  font-weight: bold;
+  width: 200px;
+  float: left;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.field {
+  margin-left: 210px;
+  font-family: Courier new, monospace;
+}
+
+#links {
+  float: right;
+  text-align: right;
+  margin-top: 40px;
+  padding-right: 10px;
+  border: 1px solid #aaa;
+  padding: 5px;
+  a { text-decoration: none; 
+      color: black;
+      text-shadow: 1px 1px 2px #fff; 
+  }
+  background: #ddd;
+  border-radius: 5px 5px 5px 5px;
+  &:hover {
+    background: darken(#4CA6DC, 15%);
+  }
+}
+
+.file-description {
+  margin-top: 30px;
+  line-height: 50%;  
+  font-size: 0.9em;
+}
+
+.note {
+  float: right;
+  margin-top: 40px;
+  margin-right: 120px;
+  width: 200px;
+  padding: 20px;
+  font-size: 0.9em;
+  border-radius: 10px;
+  box-shadow: 3px 3px 5px #ddd;
+  background: #ffe;
+  opacity: 0.7;
+}
+#upload-form {
+  background: none;
+  border-radius: 10px 10px 10px 10px;
+  padding: 40px;
+  margin: 10px;
+}
+
+#results {
+  margin-top: 40px;
+  margin-left: 20px;
+  margin-right: 20px;
+
+  table {
+    th {
+      text-shadow: 1px 1px 2px #fff; 
+      height: 30px;
+      border-right: 1px solid #444;
+      padding: 2px;
+      border-bottom: 1px solid black;
+    }
+    tr { 
+      &:hover {
+        background: darken(#4CA6DC, 15%);
+        color: black;
+        text-shadow: 0.1em 0.1em 1px #ddd;
+      }
+      td {
+        border-right: 1px solid #eee;
+        font-size: 0.8em;
+      }
+    }
+  }
+}
+
+#errors {
+  padding: 20px;
+  background: #880000;
+  color: white;
+  text-shadow: 0.1em 0.1em #000;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 10px;
+  border: 1px solid black;
+  border-radius: 10px 10px 10px 10px;
+}

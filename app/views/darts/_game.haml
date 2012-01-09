@@ -1,0 +1,10 @@
+- [game[:player_1],game[:player_2]].each do |player|
+  %tr{style: 'border-bottom: 1px solid #ddd;padding: 0px; margin:0px'}
+    %td{style: 'border-bottom: 1px solid #ddd; padding: 5px;margin:0px'}
+      %span{title: game[:from_id] + "\n" + game[:from] + "\n" + game[:date]}= Time.parse(game[:date]).strftime("%Y-%m-%d %H:%M")
+    %td{style: 'border-bottom: 1px solid #ddd; padding: 5px;margin:0px;text-align:center'}
+      = game[:player_1].to_s.humanize + " vs. " + game[:player_2].to_s.humanize
+    %td{style: 'border-bottom: 1px solid #ddd; padding: 5px'}= player.to_s.humanize
+    - game[player].each do |k,v|
+      %td{style: 'border-bottom: 1px solid #ddd; padding: 5px;margin: 0px;text-align: center'}= v.to_s
+
