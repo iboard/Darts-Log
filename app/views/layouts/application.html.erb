@@ -7,8 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
+<div id='container'>
+  <%= yield %>
+</div>
+<div id='copyright'>
+  © 2011 by <%= link_to 'Andreas Altendorfer', 'http://altendorfer.at' -%>
+</div>
 
 </body>
 </html>
