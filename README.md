@@ -33,6 +33,15 @@ Feel free to fork or clone this rails-application from [github.com/iboard/Darts-
   2. Start the Mailfetch-process with `script/mail_reader.rb`
     * You may start this process with your production-server from within `/etc/inittab`
 
+
+Contact
+=======
+  
+_darts@iboard.cc_ will process all mails formated as by Ross Bray's Scorer.
+All other mails will be dropped and not get readed!
+  
+To contact me, please mail to andreas-at-altendorfer.at or use [Github-issues](http://github.com/iboard/Darts-Log/issues) to report any issues.
+
 Darts-Log is licensed under the terms of
 ========================================
 
