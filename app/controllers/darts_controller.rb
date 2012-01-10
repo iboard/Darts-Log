@@ -30,7 +30,7 @@ class DartsController < ApplicationController
       load_data
     else
       @error = "Wrong file type. Please upload ASCII Data"
-      redirect_to root_path
+      redirect_to darts_path
       return false
     end
     render :index

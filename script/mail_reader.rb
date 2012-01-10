@@ -8,7 +8,7 @@ require File::expand_path("../../config/mailconfig.rb", __FILE__)
 require File::expand_path("../../lib/darts.rb", __FILE__)
 require "mailman"
 
-Mailman.config.poll_interval = 15 #if ENV['RAILS_ENV'] == 'development'
+Mailman.config.poll_interval = 15 if ENV['RAILS_ENV'] != 'production'
 Mailman.config.logger = Logger.new("log/mailman.log")
 Mailman.config.pop3 = {
   server: MAILSERVER[:server], 
