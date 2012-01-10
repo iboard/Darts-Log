@@ -38,7 +38,7 @@ Contact
 =======
   
 _darts@iboard.cc_ will process all mails formated as by Ross Bray's Scorer.
-All other mails will be dropped and not get readed!
+All other mails will be dropped and not get read!
   
 To contact me, please mail to andreas-at-altendorfer.at or use [Github-issues](http://github.com/iboard/Darts-Log/issues) to report any issues.
 
