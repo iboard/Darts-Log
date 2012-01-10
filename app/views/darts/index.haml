@@ -47,7 +47,7 @@
   - begin  
     #results
       #links
-        = link_to "Download CSV", darts_index_path(format: :csv)
+        = link_to "Download CSV", darts_path(format: :csv)
       %h2= @games.first[:subject]
       %h3
         = @games.first[:from]
@@ -74,3 +74,4 @@
       of one or more mails from 
       %span{style: 'font-style: italic;'}
         Russ Bray Darts Scorer
+      %pre= e.inspect

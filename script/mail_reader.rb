@@ -73,12 +73,13 @@ Mailman::Application.run do
                 highest_checkout: game[player]['Highest Checkout'].to_i,
                 highest_throw: game[player]['Highest Throw'].to_i,
                 doubles_hit: game[player]['Doubles Hit'].gsub(/[\(\)\%]/,'').to_i,
-                count_180: game[player]['180'].to_i,
-                count_140: game[player]['140'].to_i,
-                count_100: game[player]['100'].to_i,
-                count_60:  game[player]['60'].to_i
+                count_180: game[player]['count_180'.to_sym].to_i,
+                count_140: game[player]['count_140'.to_sym].to_i,
+                count_100: game[player]['count_100'.to_sym].to_i,
+                count_60:  game[player]['count_60'.to_sym].to_i
               }
             )
+            Mailman.logger.info "UPDATE ATTRIBUTE #{_game.inspect} <= #{game[player].inspect}"
           end
         end
         Mailman.logger.info "DATABASE NOW CONTAINS #{Game.count} RECORDS"

@@ -3,14 +3,14 @@ require 'darts'
 class EmailReader
   attr_reader :filename
   
-  def from_file(filename)
+  def self.from_file(filename)
     _f = File.open(filename,'r')
     if _f
       _input = _f.read
       _f.close
     end
     raise "No Data found #{filename}" unless _input
-    return new(_input)
+    EmailReader.new(_input)
   end
 
   def initialize(_data)

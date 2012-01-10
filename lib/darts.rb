@@ -104,7 +104,7 @@ module Darts
       _data = line.split(/ Score Table -/).map(&:strip)
       player = _data[0]
       d = _data[1].split(/,/).map(&:strip)
-      label = %W(180 140 100 60)
+      label = %W(count_180 count_140 count_100 count_60)
       d.map!{|x| x.gsub(/x[124068]+s/,'')}.each_with_index do |v,i|
         @game[player.underscore.to_sym] ||= {}
         @game[player.underscore.to_sym][label[i].to_sym]= d[i]
