@@ -1,0 +1,12 @@
+%h1 Games
+#results
+  #links
+    = link_to "Download CSV", games_path(format: :csv)
+  %table{style: 'width: 100%; border: 1px solid #ddd; margin:0px; padding:0px', cellpadding: 0, cellspacing: 0}
+    %tr{style: 'background: #ddd;    padding: 0px; margin:0px'}    
+      %th Date    
+      %th Game    
+      %th Player
+      - [:sets,:legs,:doubles_hit,:three_dart_average,:highes_throw,:highest_checkout,:count_180,:count_140,:count_100,:count_60].each do |key|
+        %th= key.to_s.humanize
+      = render @games

@@ -47,6 +47,7 @@ module Darts
           append_to_game(line) if @game
         end
       end
+      finish_game
     end
 
   protected
@@ -105,6 +106,7 @@ module Darts
       d = _data[1].split(/,/).map(&:strip)
       label = %W(180 140 100 60)
       d.map!{|x| x.gsub(/x[124068]+s/,'')}.each_with_index do |v,i|
+        @game[player.underscore.to_sym] ||= {}
         @game[player.underscore.to_sym][label[i].to_sym]= d[i]
       end
     end

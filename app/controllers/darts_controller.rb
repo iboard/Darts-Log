@@ -40,7 +40,7 @@ private
 
   def load_data
     begin
-      @reader = EmailReader.new(datafile)
+      @reader = EmailReader.from_file(datafile)
       @games  = @reader.games
     rescue => e
       @error = "Can't load data #{e.inspect}"
@@ -50,7 +50,7 @@ private
   end
 
   def datafile
-    File::expand_path("../../../tmp/results_#{from_id}.txt",__FILE__)
+    File::expand_path("../../../tmp/results.txt",__FILE__)
   end
 
   def from_id

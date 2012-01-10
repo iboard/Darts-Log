@@ -7,6 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div id='menu'>
+  <ul>
+    <li><%= link_to "Games", games_path -%></li>
+    <li><%= link_to "Players", players_path -%></li>
+    <li><%= link_to "Upload", darts_path -%></li>
+  </ul>
+</div>
 <div id='container'>
   <%= yield %>
 </div>

@@ -4,7 +4,11 @@
   #errors= @error
     
 #upload-form
-  .note 
+  .note
+    %p
+      %strong Email:
+      Send your scores directly to 
+      %strong= "darts@iboard.cc" 
     %p
       %strong Upload:
       Please upload a Maildir-file containing one or more mails as formated by
@@ -17,7 +21,7 @@
     = file_field_tag :darts_file
     = submit_tag "Upload File"
 
-  - if @reader
+  - if @reader && @reader.filename
     .file-description
       %h2 Last uploaded File
       Filename:

@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  upload_id: MyString
+  player_id: 1
+  game: MyString
+  sets: 1
+  legs: 1
+  best_winning_leg: 1
+  three_dart_average: 1.5
+  highest_checkout: 1
+  highest_throw: 1
+  doubles_hit: 1
+  count_180: 1
+  count_140: 1
+  count_100: 1
+  count_60: 1
+
+two:
+  upload_id: MyString
+  player_id: 1
+  game: MyString
+  sets: 1
+  legs: 1
+  best_winning_leg: 1
+  three_dart_average: 1.5
+  highest_checkout: 1
+  highest_throw: 1
+  doubles_hit: 1
+  count_180: 1
+  count_140: 1
+  count_100: 1
+  count_60: 1

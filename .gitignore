@@ -18,6 +18,7 @@ tmp/*
 .yardoc/**/*
 .sass-cache/*
 .sass-cache/**/*
+config/mailconfig.rb
 coverage/*
 coverage/**/*
 test/unit/coverage/*

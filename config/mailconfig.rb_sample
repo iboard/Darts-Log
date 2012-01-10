@@ -1,0 +1,10 @@
+# mailconfig.rb
+
+
+MAILSERVER = {
+  server: "YOUR SERVER HERE",
+  port: 995,
+  ssl: true,
+  user: "YOUR USER HERE",
+  password: "YOUR PASSWORD HERE"
+}

@@ -1,8 +1,11 @@
 Darts::Application.routes.draw do
-  get "darts/index"
 
-  
-  resource :darts, only: [:index,:new,:create]
+    
+  get "player/index"
+
+  resources :darts, only: [:index,:new,:create]
+  resources :players, only: [:index,:show]
+  resources :games, only: [:index]  
 
   
   root :to => 'darts#index'
