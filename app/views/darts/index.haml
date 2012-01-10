@@ -7,15 +7,13 @@
   .note
     %p
       %strong Email:
-      Send your scores directly to 
+      Send your scores directly from your iPad/iPhone-App to
       %strong= "darts@iboard.cc" 
+      And view your results in
+      = link_to "The Game Score Table", games_path
     %p
       %strong Upload:
-      Please upload a Maildir-file containing one or more mails as formated by
-      = link_to "Russ Bray Darts Scorer", "http://itunes.apple.com/de/app/russ-bray-s-scorer/id377453562?mt=8"
-      Application.
-    %ul
-      %li= link_to "HOWTO Darts Log?", "mailformat.html"
+      Or upload a Maildir-file.
   = form_tag darts_path, :multipart => true do
     = label_tag "Upload Darts ..."
     = file_field_tag :darts_file

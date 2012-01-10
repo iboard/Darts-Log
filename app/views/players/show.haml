@@ -1,7 +1,7 @@
 %h1= "Player " + @player.name
 #results
   #links
-    = link_to "Download CSV", games_path(format: :csv)
+    = link_to "Download CSV", player_games_path(@player,format: :csv)
   %table{style: 'width: 100%; border: 1px solid #ddd; margin:0px; padding:0px', cellpadding: 0, cellspacing: 0}
     %tr{style: 'background: #ddd;    padding: 0px; margin:0px'}    
       %th Date    

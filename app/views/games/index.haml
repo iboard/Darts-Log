@@ -1,4 +1,4 @@
-%h1 Games
+%h1= @games.count.to_s + " Games"
 #results
   #links
     = link_to "Download CSV", games_path(format: :csv)

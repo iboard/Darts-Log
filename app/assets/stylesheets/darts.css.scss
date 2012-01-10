@@ -50,6 +50,7 @@ label {
   float: right;
   text-align: right;
   margin-top: 40px;
+  margin-bottom: 10px;
   padding-right: 10px;
   border: 1px solid #aaa;
   padding: 5px;
@@ -72,10 +73,11 @@ label {
 
 .note {
   float: right;
-  margin-top: 40px;
+  margin-top: -30px;
   margin-right: 120px;
-  width: 200px;
-  padding: 40px;
+  margin-bottom: 0px;
+  width: 250px;
+  padding: 20px;
   font-size: 0.9em;
   border-radius: 20px;
   box-shadow: 3px 3px 5px #ddd;
@@ -91,7 +93,7 @@ label {
 }
 
 #results {
-  margin-top: 40px;
+  margin-top: 100px;
   margin-left: 20px;
   margin-right: 20px;
 

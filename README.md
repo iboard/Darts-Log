@@ -4,6 +4,18 @@ Welcome Darts-Log
 Darts Log can handle Maillog-files from mails sent by
 [Russ Bray Darts Scorer - Application](http://itunes.apple.com/de/app/russ-bray-s-scorer/id377453562?mt=8).
 
+darts.iboard.cc
+===============
+
+Upload by email (the easy way)
+------------------------------
+
+  You can send your scores to darts@iboard.cc and then view your table
+  at http://darts.iboard.cc.
+
+Upload maildir-files (Batch-Upload)
+-----------------------------------
+
   1. Send mails from the app to your e-mail-account
   1. Mark all Mails from the app and chose
     1. Save As (Raw Mail-format)
@@ -12,8 +24,14 @@ Darts Log can handle Maillog-files from mails sent by
   1. View a nice formated HTML-Table
   1. Download your data as CSV-Table to use with your spreadsheet-app.
 
-> A direct email-upload will be provided within the next days.
+Your own server
+===============
 
+Feel free to fork or clone this rails-application from [github.com/iboard/Darts-Log](http://github.com/iboard/Darts-Log).
+
+  1. Copy _config/mailconfig.rb_sample_ to _config/mainconfig.rb_ and edit to fit your needs.
+  2. Start the Mailfetch-process with `script/mail_reader.rb`
+    * You may start this process with your production-server from within `/etc/inittab`
 
 Darts-Log is licensed under the terms of
 ========================================

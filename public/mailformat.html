@@ -5,16 +5,36 @@
     <link rel='stylesheet' href='/assets/application.css' />
   </head>
   <body>
+  <div id='menu'>
+    <ul>
+      <li><a href='/games'>Games</a></li>
+      <li><a href='/players'>Players</a></li>
+      <li><a href='/darts'>Upload</a></li>
+    </ul>
+  </div>
+
      <h1 id='title'>Darts Log for Russ Bray Darts Scorer</h1>      
      <p>&nbsp;</p>
      <div id='page'>
          <div id='content'>
          This application can handle mails sent by the <a href='http://itunes.apple.com/de/app/russ-bray-s-scorer/id377453562?mt=8'>iPhone/iPod-Application "Russ Bray Darts Scorer"</a>
+
+         <h2>Upload by e-mail (The easy way)</h2>
+         <blockquote>
+           <p>Send your darts-score directly to or cc to <b><em>darts@iboard.cc</em></b> from
+             within your <em><a href='http://itunes.apple.com/de/app/russ-bray-s-scorer/id377453562?mt=8'>iPhone/iPod-Application "Russ Bray Darts Scorer"</a></em>-Application.
+           </p>
+           <p>
+           This results will be parsed and stored to the <a href=/games>Games-Table</a>.
+           </p>
+         </blockquote>
+
+         <h2>Or Upload your Maildir-file(s)</h2>
          <ol>
            <li>Send the email from iPad/iPhone-App to your mail-account</li>
            <li>Mark (select this and all other mails containing darts-scores)</li>
            <li>Choose Export from Mail-Programm and export all Mails to a single text-file</li>
-           <li>Upload this file to this application</li>
+           <li><a href=/darts>Upload this file to this application</a></li>
            <li>See the results formated as a table</li>
            <li>Download your results as CSV-file</li>
          </ol>
