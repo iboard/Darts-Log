@@ -1,0 +1,14 @@
+%h1 Games by uploaders
+
+%blockquote{style: "width: 650px;"}
+  The uploader-hash is calculated by the email-address from where we received the mail.
+  To keep your privacy, your email-address is not stored.
+
+%blockquote
+  %strong Uploaders are:
+  = @uploaders.map { |uploader| link_to uploader[0], "#"+uploader[0]}.join(", ").html_safe
+  
+#results{style: 'margin-top: 140px;'}  
+  - @uploaders.each do |uploader|
+    %a{name: uploader[0]}
+    = render 'uploader', uploader: uploader

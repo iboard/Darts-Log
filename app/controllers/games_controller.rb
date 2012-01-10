@@ -12,7 +12,25 @@ class GamesController < ApplicationController
         format.csv {
           send_data games_to_csv, :filename => 'darts.csv', :dipatch => :download
         }
-      end
+    end
+  end
+
+  def uploaders
+    @uploaders = Game.all.group_by{|g| g.player.uploader_id }
+  end
+
+  def uploader
+    @uploader = [
+      params[:id], 
+      Game.includes(:player).where('players.uploader_id = ?', params[:id] )
+    ]
+    respond_to do |format|
+        format.html {}
+        format.csv {
+          @games = @uploader[1]
+          send_data games_to_csv, :filename => 'darts.csv', :dipatch => :download
+        }
+    end
   end
 
 private

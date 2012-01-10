@@ -1,0 +1,9 @@
+%h1= "Games by " + params[:id]
+
+%blockquote
+  %p
+    %strong Players:
+    = @uploader[1].map { |game| [game.player.id, game.player.name] }.uniq.map { |id,player| link_to player, player_path(id) }.join(", ").html_safe
+
+#results{style: 'margin-top: 140px;'}
+  = render 'uploader', uploader: @uploader
