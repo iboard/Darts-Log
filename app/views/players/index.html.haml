@@ -1,5 +1,18 @@
 %h1 Player list
 
-%blockquote
-  %ol
-    =render @players
+%div{style: 'float: right; width: 350px; padding: 10px; margin-right: 170px;'}
+  %p
+    Build teams by using one device (iPhone/iPad) and different player-names.
+    If you use different devices you can configure the same 'from-address' on
+    each of the devices of one team.
+
+#results
+  %table{style: 'border: 1px solid #ddd;'}
+    %tr{style: "background: #ddd;    padding: 0px; margin:0px;"}
+      %th Player
+      %th Games
+      %th Sets
+      %th Legs
+      %th 3 Dart average
+      %th Uploader/Team
+    =render @players.order("uploader_id asc").all

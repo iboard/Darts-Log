@@ -14,9 +14,6 @@ class DartsController < ApplicationController
     end
   end
 
-  def new
-  end
-
   def create
     if params[:darts_file].nil?
       redirect_to root_path 

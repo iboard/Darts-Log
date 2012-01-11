@@ -5,31 +5,40 @@
     <link rel='stylesheet' href='/assets/application.css' />
   </head>
   <body>
-  <div id='menu'>
-    <ul>
-      <li><a href='/games'>Games</a></li>
-      <li><a href='/players'>Players</a></li>
-      <li><a href='/darts'>Upload</a></li>
-    </ul>
-  </div>
+    <div id='menu'>
+      <ul>
+        <li><a href='/games'>Games</a></li>
+        <li><a href='/players'>Players</a></li>
+        <li><a href='/uploaders'>Uploaders</a></li>
+        <li><a href='/darts'>Upload</a></li>
+        <li><span style='color: white;'>README</span></li>
+      </ul>
+    </div>
 
-     <h1 id='title'>Darts Log for Russ Bray Darts Scorer</h1>      
-     <p>&nbsp;</p>
+    <h1 id='title'>Darts Log for Russ Bray Darts Scorer</h1>      
+    <p>&nbsp;</p>
      <div id='page'>
          <div id='content'>
-         This application can handle mails sent by the <a href='http://itunes.apple.com/de/app/russ-bray-s-scorer/id377453562?mt=8'>iPhone/iPod-Application "Russ Bray Darts Scorer"</a>
+         This application can handle mails sent by the <a href='http://itunes.apple.com/de/app/russ-bray-s-scorer/id377453562?mt=8'
+         target='_blank'>iPhone/iPod-Application "Russ Bray Darts Scorer"</a>
 
          <h2>Upload by e-mail (The easy way)</h2>
          <blockquote>
            <p>Send your darts-score directly to or cc to <b><em>darts@iboard.cc</em></b> from
-             within your <em><a href='http://itunes.apple.com/de/app/russ-bray-s-scorer/id377453562?mt=8'>iPhone/iPod-Application "Russ Bray Darts Scorer"</a></em>-Application.
+             within your <em><a href='http://itunes.apple.com/de/app/russ-bray-s-scorer/id377453562?mt=8'
+             target='_blank'>iPhone/iPod-Application "Russ Bray Darts Scorer"</a></em>-Application.
            </p>
            <p>
            This results will be parsed and stored to the <a href=/games>Games-Table</a>.
+           The first upload from an unknown sender will be delayed by graylisting for about
+           5 to 10 minutes. Subsequently mails will be processed and displayed after one minute.
            </p>
          </blockquote>
 
          <h2>Or Upload your Maildir-file(s)</h2>
+         <p>Optional you can upload your mails to the Darts-Log-application
+         and then download the results formated as a table in a single CSV-file.
+         <em>Note:</em>This results will not be stored in the Games-Score-Table.
          <ol>
            <li>Send the email from iPad/iPhone-App to your mail-account</li>
            <li>Mark (select this and all other mails containing darts-scores)</li>
@@ -94,21 +103,19 @@ Content-Type: text/html;
      </div>
 
 <p>&nbsp;</p>
+
 <div style='margin-left: 20px;'>
   <H1><a name='credits'>Credit/About</a></h1>
   <p>&nbsp;</p>
   <p style='padding-left: 40px;'>
     <em>Darts Log</em> is openSource without any warrenty! 
     Written by <a href='http://altendorfer.at'>Andreas Altendorfer</a>.
+    Lisence and copyright see <a href="https://github.com/iboard/Darts-Log/blob/master/README.md">README</a>
   </p>
   
   <div style='margin-left: 20px;'>
     <ul>
-      <li><a href=#top>Back to Top</a></li>
-      <li><a href=/>Back to Darts Log</a></li>
-    </ul>
-    <ul>
-      <li><a href='https://github.com/iboard/Darts-Log'>At Github</a></li>
+      <li><a href='https://github.com/iboard/Darts-Log'>Darts Log At Github</a></li>
     </ul>
   </div>
 </div>

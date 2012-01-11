@@ -43,19 +43,11 @@ Mailman::Application.run do
 
       parser = EmailReader.new(_message)
       if parser.games.first 
-        Mailman.logger.info "RECEIVED #{parser.games.count} GAMES "
-        Mailman.logger.info "FROM #{parser.games.first[:from]}"
         _uploader_id = Digest::MD5.hexdigest(parser.games.first[:from])
         _upload_id   = Digest::MD5.hexdigest(parser.games.first[:from] + parser.games.first[:date] + parser.to_csv)
-        Mailman.logger.info "SUBJECT:" + parser.games.first[:subject]
-        Mailman.logger.info "UPLOADER_ID: #{_uploader_id}"
-        Mailman.logger.info "UPLOAD_ID: #{_upload_id}"
         parser.games.each_with_index do |game,idx|
-          Mailman.logger.info "GAME: #{idx.to_s}"
-          Mailman.logger.info "PLAYER A: #{game[:player_1]}"
           player_a = Player.find_or_create_by_name_and_uploader_id( name: game[:player_1].to_s.humanize,
                                              uploader_id: _uploader_id )
-          Mailman.logger.info "PLAYER B: #{game[:player_2]}"
           player_b = Player.find_or_create_by_name_and_uploader_id( name: game[:player_2].to_s.humanize,
                                              uploader_id: _uploader_id )
           game_a = player_a.games.find_or_create_by_upload_id(upload_id: _upload_id)
@@ -79,13 +71,11 @@ Mailman::Application.run do
                 count_60:  game[player]['count_60'.to_sym].to_i
               }
             )
-            Mailman.logger.info "UPDATE ATTRIBUTE #{_game.inspect} <= #{game[player].inspect}"
           end
         end
-        Mailman.logger.info "DATABASE NOW CONTAINS #{Game.count} RECORDS"
       else
         Mailman.logger.info "COULD NOT INTERPRET MAIL #{message.inspect}"
-        Mailman.logger.info "MESSAGE WAS #{_message.inspect}"
+        Mailman.logger.info "INTERPRETER MESSAGE WAS #{_message.inspect}"
       end
     rescue Exception => e
       Mailman.logger.error "Exception occurred while receiving message:\n#{message}"

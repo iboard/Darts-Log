@@ -1,2 +1,14 @@
-%li
-  = link_to( (player.name + ", " + player.games.count.to_s + " Game(s)"), player )
+%tr{style: "border-bottom: 1px solid #ddd; background: #{cycle('#dde','#fff')}"}
+  %td{style:'border-bottom: 1px solid #ddd; border-right: 1px solid #ddd; padding: 5px; text-align: left;'}
+    = link_to player.name, player
+  %td{style:'border-bottom: 1px solid #ddd; border-right: 1px solid #ddd; padding: 5px; text-align: center;'}
+    = player.games.count
+  %td{style:'border-bottom: 1px solid #ddd; border-right: 1px solid #ddd; padding: 5px; text-align: center;'}
+    = player.games.sum(:sets)
+  %td{style:'border-bottom: 1px solid #ddd; border-right: 1px solid #ddd; padding: 5px; text-align: center;'}
+    = player.games.sum(:legs)
+  %td{style:'border-bottom: 1px solid #ddd; border-right: 1px solid #ddd; padding: 5px; text-align: center;'}
+    = "%.2f" % [player.three_dart_average]
+  %td{style:'border-bottom: 1px solid #ddd; border-right: 1px solid #ddd; padding: 5px; text-align: center;'}
+    = link_to player.uploader_id, uploader_path(player.uploader_id)
+  
