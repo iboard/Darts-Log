@@ -5,7 +5,7 @@ class GamesController < ApplicationController
       @player = Player.find(params[:player_id])
       @games = @player.games.all
     else
-      @games = Game.all
+      @games = Game.order("created_at desc, upload_id, sets desc, legs desc")
     end
     respond_to do |format|
         format.html {}
