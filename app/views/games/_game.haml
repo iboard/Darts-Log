@@ -1,19 +1,25 @@
 - @_g ||= 0
 - @_g+=1
 - @color = cycle('#eef','#fff') if @_g.odd?
-%tr{style: "border-bottom: 1px solid #ddd;padding: 0px; margin:0px; background: #{@color}"}
-  %td{style: 'border-bottom: 1px solid #ddd; padding: 5px;margin:0px'}
-    %span{title: game.upload_id + ", " + game.created_at.strftime("%Y-%m-%d %H:%M")}
-      = game.created_at.strftime("%Y-%m-%d %H:%M")   
-  %td{style: 'border-bottom: 1px solid #ddd; padding: 5px;margin:0px;text-align:center'}
-    = game.game
-  %td{style: 'border-bottom: 1px solid #ddd; padding: 5px'}
-    = link_to( game.player.name, game.player)
-    - partner = Game.where( 'upload_id = ? and player_id is not ?', game.upload_id,game.player_id).first.player
-    vs.
-    = link_to( partner.name, player_path(partner))
+- @previous_id ||= ""
+- border = @previous_id == game.upload_id ? 'border-bottom: 1px solid #666;' : ''
+%tr{style: "border-bottom: 1px solid #ddd;padding: 0px; margin:0px; background: #{@color};font-size: 0.9em"}
+  %td{style: "#{border} padding: 5px;margin:0px;text-align:center;width: 150px"}
+    - unless @previous_id == game.upload_id
+      %span{title: game.upload_id + ", " + game.created_at.strftime("%Y-%m-%d %H:%M")}
+        = game.created_at.strftime("%Y-%m-%d %H:%M")
+    - else
+      &nbsp;
+  %td{style: "#{border} padding: 5px;margin:0px;text-align:center;width: 150px"}
+    - unless @previous_id == game.upload_id
+      = game.game
+    - else
+      &nbsp;
+  %td{style: "#{border} padding: 5px;margin:0px;text-align:center;width: 150px"}
+    %strong= link_to( game.player.name, game.player)
     
   - [:sets,:legs,:doubles_hit,:three_dart_average,:highest_throw,:highest_checkout,:count_180,:count_140,:count_100,:count_60].each do |key|
-    %td{style: 'border-bottom: 1px solid #ddd; padding: 5px;margin: 0px;text-align: center'}
+    %td{style: "#{border} padding: 5px;margin:0px;text-align:center;width: 150px"}
       = game.send(key).to_s
   
+- @previous_id = game.upload_id

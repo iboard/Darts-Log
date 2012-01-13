@@ -1,11 +1,11 @@
 class GamesController < ApplicationController
   
   def index
-    if params[:player_id]
+    if params[:player_id].present?
       @player = Player.find(params[:player_id])
       @games = @player.games.all
     else
-      @games = Game.order("created_at desc, upload_id, sets desc, legs desc")
+      @games = Game.all
     end
     respond_to do |format|
         format.html {}
