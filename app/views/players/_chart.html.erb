@@ -1,0 +1,36 @@
+<%= javascript_tag do %>
+  $(function () {
+    chart1 = new Highcharts.Chart({
+         chart: {
+            renderTo: 'chart',
+            type: 'bar'
+         },
+         title: {
+            text: "<%= @player.name -%>'s Games"
+         },
+         xAxis: {
+            categories: <%= (@player.games.map{ |game| game.game.html_safe  }).to_json.html_safe -%>
+         },
+         yAxis: {
+            title: {
+               text: 'Score'
+            }
+         },
+         series: [
+           {
+             name: '3 Dart Average',
+             data: <%= @player.games.map { |g| g.three_dart_average  }.inspect -%>
+           }, 
+           {
+             name: 'Highest Throw',
+             data: <%= @player.games.map { |g| g.highest_throw  }.inspect -%>
+           },
+           {
+             name: 'Highest Checkout',
+             data: <%= @player.games.map { |g| g.highest_checkout  }.inspect -%>
+           },
+         ]
+      });
+  });  
+<% end %>
+

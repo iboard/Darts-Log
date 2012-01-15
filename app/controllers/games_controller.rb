@@ -36,7 +36,7 @@ class GamesController < ApplicationController
 private
   def games_to_csv
     _columns=[:sets,:legs,:doubles_hit,:three_dart_average,:highest_throw,:highest_checkout,:count_180,:count_140,:count_100,:count_60]
-    "Game-UID;Date;Game;" + _columns.map{|c| c.to_s.humanize }.join(";") + "\n" +
+    "Game-UID;Date;Game;Player;" + _columns.map{|c| c.to_s.humanize }.join(";") + "\n" +
     @games.map { |game| 
       _record = [
         game.upload_id,
