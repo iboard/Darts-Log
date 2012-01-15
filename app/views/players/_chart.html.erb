@@ -9,7 +9,7 @@
             text: "<%= @player.name -%>'s Games"
          },
          xAxis: {
-            categories: <%= (@player.games.map{ |game| game.game.html_safe  }).to_json.html_safe -%>
+            categories: <%= (@player.games.map{ |game| game.game + "<br/>(#{game.created_at.to_s(:short)})"  }).to_json.html_safe -%>
          },
          yAxis: {
             title: {
@@ -28,6 +28,10 @@
            {
              name: 'Highest Checkout',
              data: <%= @player.games.map { |g| g.highest_checkout  }.inspect -%>
+           },
+           {
+             name: 'Doubles Hit (%)',
+             data: <%= @player.games.map { |g| g.doubles_hit  }.inspect -%>
            },
          ]
       });
